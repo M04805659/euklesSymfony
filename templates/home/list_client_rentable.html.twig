@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Client Rentable!{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper mb-5 mt-5">
+        <h1 class="text-center py-4">Listes des Totaux vendus ✅</h1>
+        <div class="well well-lg">
+            <p class="text-center">
+                La page qui calcule et affiche les totaux vendus pour chaque client, avec le client le plus rentable.
+            </p>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        {% for item  in items %}
+            <div class="card grid-item">
+                <div class="card-body">
+                    <h5 class="card-title"> <strong> Nom du Client : </strong> {{ item.nom ~ ' ' ~ item.prenom }}</h5>
+                    <h5 class="card-title"> <strong> Totaux Vendus : </strong> {{ item.total }}</h5>
+                </div>
+            </div>
+        {% else %}<h1 class="text-center py-4">Liste Vide</h1>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eukles!{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper mb-5 mt-5">
+        <h1 class="text-center py-4">Listes des Matériels Vendu ✅</h1>
+        <div class="well well-lg">
+            <p class="text-center">
+                les enregistrements dont les clients ont plus de <strong> 30 matériels </strong>, et dont le matériel vendu est<strong> supérieur à 30.000 euros</strong>.
+            </p>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        {% for item  in items %}
+                <div class="card grid-item">
+                    <div class="card-body">
+                        <h5 class="card-title"> <strong> Nom du Client : </strong> {{ item.nom ~ ' ' ~ item.prenom }}</h5>
+                        <h5 class="card-title"> <strong> Nombre du Materiel : </strong> {{ item.nombreMateriel }}</h5>
+                        <h5 class="card-title"> <strong> Prix Vente Materiele : </strong> {{ item.total }}</h5>
+                    </div>
+            </div>
+        {% else %}<h1 class="text-center py-4">Liste Vide</h1>
+        {% endfor %}
+    </div>
+
+{% endblock %}

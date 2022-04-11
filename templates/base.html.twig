@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <title>{% block title %}EukLes{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+
+<body>
+
+    {# inlude menu #}
+    {% include 'partials/_nav.html.twig' %}
+
+    <main class="container mt-3" role="main">
+        {{ include('partials/_flash_messages.html.twig') }}
+        {% block body %}{% endblock %}
+    </main>
+
+
+    {% include 'partials/_footer.html.twig' %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock javascripts%}
+
+</body>
+</html>

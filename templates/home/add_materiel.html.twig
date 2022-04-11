@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Saisir Materiel{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper mb-5 mt-5">
+        <h1 class="text-center py-4">Saisir les Materiels</h1>
+        <div class="well well-lg">
+            <p class="text-center">
+                <strong> La page contient les formulaires pour saisir le matériel de chaque client. on utilisant les lists deroulantes !</strong>
+            </p>
+        </div>
+    </div>
+
+    {{ form_start(form) }}
+        <div class="control-group mb-3">
+            <label for="" class="form-label"><strong>Client</strong></label>
+            {{ form_widget(form.client, {label: 'Client', attr: {class: 'form-select'}}) }}
+        </div>
+
+        <div class="control-group mb-3">
+            <label for="" class="form-label"><strong>Materiel</strong></label>
+            {{ form_widget(form.materiel, {'attr': {'class': 'form-select'}}) }}
+        </div>
+
+        <div class="control-group mb-3">
+            {{ form_widget(form.vendu, {'attr': {'class': 'form-check-input'}}) }}
+        </div>
+
+        {{ form_widget(form.saveAndCreateNew, {label: 'Enregistrer', attr: {class: 'btn btn-primary'}}) }}
+    {{ form_end(form) }}
+{% endblock %}
